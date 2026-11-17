@@ -1,6 +1,6 @@
 ---
 name: blink-health
-description: Blink camera questions: low batteries, cameras offline, weak WiFi, daily camera checks. Read-only health report for Blink cameras, doorbells and sync modules.
+description: "Blink camera questions: low batteries, cameras offline, weak WiFi, daily camera checks. Read-only health report for Blink cameras, doorbells and sync modules."
 homepage: https://github.com/ajwilkinson/openclaw-blink-health
 metadata: {"openclaw":{"emoji":"📷","requires":{"bins":["python3"]}}}
 ---
