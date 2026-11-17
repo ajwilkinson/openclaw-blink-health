@@ -57,10 +57,13 @@ Needs Python 3.10 or later.
 ```sh
 git clone https://github.com/ajwilkinson/openclaw-blink-health.git
 cd openclaw-blink-health
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
+sh setup.sh
 .venv/bin/python blink_health.py login
 ```
+
+`setup.sh` creates a private Python environment in `.venv` and installs blinkpy into it,
+so nothing is added to your system Python. On Debian or Ubuntu you may first need
+`sudo apt install python3-venv`.
 
 `login` asks for your Blink email, password and the code Blink sends you.
 
@@ -99,7 +102,9 @@ if you work with Blink's API yourself:
 ## Use with OpenClaw
 
 Copy or symlink this folder into your OpenClaw workspace's `skills/` directory. `SKILL.md` tells
-the agent how to run the check and how to word the results. Then add a line to a daily
+the agent how to run the check and how to word the results, and to run `setup.sh` itself the
+first time if you haven't. You still do the `login` step yourself, in a terminal, because it
+needs your password and the code Blink sends you. Then add a line to a daily
 automation, for example: *"Run the blink-health skill's check and tell me about anything it
 prints."*
 

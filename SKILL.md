@@ -9,6 +9,7 @@ metadata: {"openclaw":{"emoji":"📷","requires":{"bins":["python3"]}}}
 
 Run the script with the Python from this skill's virtual environment: `{baseDir}/.venv/bin/python {baseDir}/blink_health.py <command>`. Each call takes a few seconds.
 
+0. First use: if `{baseDir}/.venv/bin/python` does not exist, run `sh {baseDir}/setup.sh` once (about a minute; it installs blinkpy into a private environment in the skill folder, not the system Python). If it says the venv module is missing, pass on its install instruction to the user rather than running sudo yourself.
 1. If the user hasn't logged in yet (the script says `not logged in`), ask them to run `{baseDir}/.venv/bin/python {baseDir}/blink_health.py login` in a terminal themselves. It needs their password and a code Blink sends them, so never ask for either in chat.
 2. For "how are my cameras?", run `status` and summarise it in plain words: name the devices that need something done, then say the rest are fine.
 3. For scheduled checks, run `check`. It prints one line per problem and nothing when all is well. If it prints nothing, there is nothing to report. Pass `--ignore NAME` for any device the user has asked you to leave out.
